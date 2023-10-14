@@ -77,3 +77,11 @@
     max-width: 1000px;
 }
 
+.backgroundWaves {
+    background-image: url(<src/img/summaryBackground.png>);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+ }
