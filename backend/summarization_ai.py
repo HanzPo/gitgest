@@ -1,10 +1,16 @@
 import cohere 
+import os
+from dotenv import load_dotenv
 from flask import Flask, request, jsonify
 import requests
 
-co = cohere.Client('76JzRcCMdAJaylHBzzK3EuebwmQqg2SYsUyyuN2o')
-co_response = co.summarize( 
-  text='{text}',
+load_dotenv()
+COHERE_API_KEY = os.getenv("COHERE_API_KEY")
+
+co = cohere.Client(COHERE_API_KEY)
+def co_response (commit_history): 
+  return co.summarize( 
+  text=f'{commit_history}',
   length='auto',
   format='auto',
   model='command',
@@ -12,13 +18,13 @@ co_response = co.summarize(
   temperature=0.3,
 )
 
-POI = 'nyiyui'
 app = Flask(__name__)   
 #["DEBUG"] = True
     
 @app.route('/receive_repo', methods=['GET'])
 def receive_repo():
     repo_url = request.args.get('url')
+    POI = request.args.get('poi')
     commit_list = []
 
     if not repo_url:
@@ -39,23 +45,27 @@ def receive_repo():
           commits = response.json()
         else:
           return({'ERROR': 'GitHub API request failed'}), response.status_code
-        
 
         for commit in commits:
-            if commit['author']['login'] != POI:
+            try:
+              if commit['author']['login'] != POI:
+                  commit_list.append(commit)
+              else:
                 commit_list.append(commit)
-            else:
-              commit_list.append(commit)
-              break
+                break
+            except:
+               continue
         
 
-        base = commit_list[-1]
-        head = commit_list[0] 
+        base = commit_list[-1]['sha']
+        head = commit_list[0]['sha']
 
-        api_url = f'/repos/{owner}/{repo_name}/compare/:{base}...:{head}'
+        api_url = f'https://api.github.com/repos/{owner}/{repo_name}/compare/{base}...{head}'
+        print(api_url)
+        response = requests.get(api_url, headers=headers)
 
         if response.status_code == 200:
-          summary = response.json()
+          return response.json()
           return co_response(summary)
         else:
           return({'ERROR': 'GitHub API request failed'}), response.status_code
@@ -64,4 +74,4 @@ def receive_repo():
         return jsonify({'ERROR': f'Failed to fetch GitHub repository information: {str(e)}'}), 500
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
