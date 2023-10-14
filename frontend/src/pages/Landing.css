@@ -10,6 +10,7 @@
     background-image: url(<src/img/robot.png>), lightgray 50% / cover no-repeat;
 }
 
+
 .rightSide {
     margin: 10px;
     align-items: center;
