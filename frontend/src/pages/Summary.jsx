@@ -24,8 +24,21 @@ const Summary = () => {
 
   return (
     <div>
-      <h1>Summarization of Commits Since</h1>
-      <p>{sinceLastCommit}</p>
+      <div className="header">
+        <h1 id="companyName">company name here </h1>
+      </div>
+      <div className="main">
+        <div className="title">
+          <h1>Summarization of Commits Since</h1>
+          <p>{sinceLastCommit}</p>
+        </div>
+        <div className="summary">
+          <p>
+          Code summary goes here. We use Co:here’s API to summarize all Github commits since your last one.
+          </p>
+        </div>
+      </div>
+      
     </div>
   );
 };
