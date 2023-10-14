@@ -2,6 +2,7 @@ import cohere
 import os
 from dotenv import load_dotenv
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import requests
 
 load_dotenv()
@@ -44,7 +45,7 @@ def receive_repo():
         if response.status_code == 200:
           commits = response.json()
         else:
-          return({'ERROR': 'GitHub API request failed'}), response.status_code
+          return({'error': 'GitHub API request failed'}), response.status_code
 
         for commit in commits:
             try:
@@ -61,17 +62,19 @@ def receive_repo():
         head = commit_list[0]['sha']
 
         api_url = f'https://api.github.com/repos/{owner}/{repo_name}/compare/{base}...{head}'
-        print(api_url)
         response = requests.get(api_url, headers=headers)
 
+
         if response.status_code == 200:
-          return response.json()
+          return ({"since_last_commit": response.json()["ahead_by"] - 1})
           return co_response(summary)
         else:
-          return({'ERROR': 'GitHub API request failed'}), response.status_code
+          return({'error': 'GitHub API request failed'}), response.status_code
     
     except requests.exceptions.RequestException as e:
-        return jsonify({'ERROR': f'Failed to fetch GitHub repository information: {str(e)}'}), 500
+        return jsonify({'error': f'Failed to fetch GitHub repository information: {str(e)}'}), 500
+
+CORS(app)
 
 if __name__ == '__main__':
     app.run(debug=True)
