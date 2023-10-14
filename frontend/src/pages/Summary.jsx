@@ -29,8 +29,7 @@ const Summary = () => {
       </div>
       <div className="main">
         <div className="title">
-          <h1>Summarization of Commits Since</h1>
-          <p>{sinceLastCommit}</p>
+          <h1>Summarization of Commits Since {sinceLastCommit} Commits Ago</h1>
         </div>
         <div className="summary">
           <p>
