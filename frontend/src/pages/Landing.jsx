@@ -2,6 +2,10 @@ import "./Landing.css";
 
 const Landing = () => {
   return (
+    <div>
+    <div className="header">
+      <h1 id="companyName">company name here </h1>
+    </div>
     <div className="center">
       <div id="leftSide">
       <img src="src/img/robot.png" alt="Image of Robot" width="600" height="500" />
@@ -19,6 +23,7 @@ const Landing = () => {
         </div>
       </div>
       
+    </div>
     </div>
   );
 };
