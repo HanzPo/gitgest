@@ -32,7 +32,7 @@ const Summary = () => {
         </div>
         <div className="summary">
           <p>
-          Code summary goes here. We use Co:here’s API to summarize all Github commits since your last one.
+          Code summary goes here. We use Co:here’s API to summarize all Github commits since your last one.Code summary goes here. We use Co:here’s API to summarize all Github commits since your last one.Code summary goes here. We use Co:here’s API to summarize all Github commits since your last one.Code summary goes here. We use Co:here’s API to summarize all Github commits since your last one.Code summary goes here. We use Co:here’s API to summarize all Github commits since your last one.Code summary goes here. We use Co:here’s API to summarize all Github commits since your last one.Code summary goes here. We use Co:here’s API to summarize all Github commits since your last one.Code summary goes here. We use Co:here’s API to summarize all Github commits since your last one. 
           </p>
         </div>
       </div>

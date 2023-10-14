@@ -30,7 +30,7 @@
 .title {
     text-align: center;
     font-family: 'SpaceGroteskBold';
-    font-size: 50px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -49,13 +49,13 @@
     font-family: "SpaceGroteskRegular";
     padding: 1.1rem;
     border: double 3px transparent;
-    border-radius: 100px;
+    border-radius: 50px;
     background-image: linear-gradient(#443C5C, #443C5C), 
     linear-gradient(90deg, #FF3BFF 0%, #ECBFBF 38.02%, #5C24FF 75.83%, #D94FD5 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
     line-height: 33px; /* 165% */
     letter-spacing: 0.72px;
-
+    max-width: 1000px;
 }
 
