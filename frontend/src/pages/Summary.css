@@ -22,7 +22,8 @@
     padding: 0px 0px;
     display: flex;
     height: 100vh; /* Optional: Center vertically in the viewport */
-    background: linear-gradient(180deg, #000 0%, rgba(107, 53, 247, 0.20) 100%); /* make gradient and purple stronger */
+    background-image: url("src/img/summaryBackground.png");
+    /* background: linear-gradient(180deg, #000 0%, rgba(107, 53, 247, 0.20) 100%); make gradient and purple stronger */
     align-items: center;
     justify-content: center;
 }
@@ -78,14 +79,8 @@
 }
 
 .backgroundWaves {
-    background-image: url(<src/img/summaryBackground.png>);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 500px;
-    width: 100%;
- }
- 
+}
+
 .display-linebreak {
     white-space: pre-line;
   }
