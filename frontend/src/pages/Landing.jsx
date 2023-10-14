@@ -1,6 +1,18 @@
+import { useState } from "react";
 import "./Landing.css";
 
 const Landing = () => {
+  const [repoLink, setRepoLink] = useState("");
+  const [username, setUsername] = useState("");
+
+  const handleRepoLinkChange = (event) => {
+    setRepoLink(event.target.value);
+  };
+
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
   return (
     <div>
     <div className="header">
@@ -13,10 +25,25 @@ const Landing = () => {
       <div className="rightSide">
         <h1 id="colourHead">Summarize Commits</h1>
         <h1 id="whiteHead">With AI</h1>
-        <p id="paragraph">We use Co:here’s API to summarize all Github commits since your last one.</p>
+        <p id="paragraph">
+        We use Co:here’s API to summarize all Github commits since your last
+        one.
+      </p>
         <div className="inputContainer">
-          <input className="textInput" id="textInput1" placeholder="Enter your GitHub repository link here"/>
-          <input className="textInput" id="textInput2" placeholder="Enter your username here"/>
+          <input
+          className="textInput"
+          id="textInput1"
+          value={repoLink}
+          onChange={handleRepoLinkChange}
+          placeholder="Enter your GitHub repository link here"
+        />
+          <input
+          className="textInput"
+          id="textInput2"
+          value={username}
+          onChange={handleUsernameChange}
+          placeholder="Enter your username here"
+        />
           <a href="/summary">
             <button id="goButton"></button>
           </a>
