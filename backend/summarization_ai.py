@@ -76,7 +76,7 @@ def receive_repo():
             
           summary = co_response(prompt)
 
-          return ({"since_last_commit": latest_commits["ahead_by"] - 1, "summary" : summary})
+          return ({"since_last_commit": latest_commits["ahead_by"] - 1, "summary" : summary[1]})
           return co_response(summary)
         else:
           return({'error': 'GitHub API request failed'}), response.status_code

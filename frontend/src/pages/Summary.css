@@ -77,3 +77,6 @@
     max-width: 1000px;
 }
 
+.display-linebreak {
+    white-space: pre-line;
+  }
