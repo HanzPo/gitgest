@@ -4,7 +4,7 @@ const Landing = () => {
   return (
     <div className="center">
       <div id="leftSide">
-      <img src="src/img/robot.png" alt="Image of Robot" />
+      <img src="src/img/robot.png" alt="Image of Robot" width="600" height="500" />
       </div>
       <div className="rightSide">
         <h1 id="colourHead">Summarize Commits</h1>
