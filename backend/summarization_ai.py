@@ -12,12 +12,12 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 co = cohere.Client(COHERE_API_KEY)
 def co_response (commit_history): 
   return co.summarize( 
-  text=f'{commit_history}',
-  length='medium',
+  text=commit_history,
+  length='long',
   format='bullets',
   model='command',
   additional_command='',
-  temperature=1,
+  temperature=2,
 )
 
 app = Flask(__name__)   
@@ -71,13 +71,16 @@ def receive_repo():
           prompt = ""
 
           for commit in latest_commits["commits"]:
-             message = commit["commit"]["message"]
-             prompt += message + "\n"
+            message = commit["commit"]["message"]
+
+            if (len(prompt) + len(message)) > 50000:
+               break
             
+            prompt += message + "\n"
+
           summary = co_response(prompt)
 
           return ({"since_last_commit": latest_commits["ahead_by"] - 1, "summary" : summary[1]})
-          return co_response(summary)
         else:
           return({'error': 'GitHub API request failed'}), response.status_code
     
