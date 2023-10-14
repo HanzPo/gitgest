@@ -26,7 +26,7 @@ const Summary = () => {
 
   if (!isLoading) {
     return (
-      <div>
+      <div className="backgroundWaves">
         <div className="header">
           <h1 id="companyName">company name here </h1>
         </div>
