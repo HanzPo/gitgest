@@ -15,6 +15,10 @@ const Landing = () => {
   };
 
   return (
+    <div>
+    <div className="header">
+      <h1 id="companyName">company name here </h1>
+    </div>
     <div className="center">
       <div id="leftSide">
         <img
@@ -28,8 +32,8 @@ const Landing = () => {
         <h1 id="colourHead">Summarize Commits</h1>
         <h1 id="whiteHead">With AI</h1>
         <p id="paragraph">
-          We use Co:here’s API to summarize all Github commits since your last
-          one.
+        We use Co:here’s API to summarize all Github commits since your last
+        one.
         </p>
         <div className="inputContainer">
           <input
@@ -50,7 +54,8 @@ const Landing = () => {
             <button id="goButton"></button>
           </Link>
         </div>
-      </div>
+      </div>  
+    </div>
     </div>
   );
 };
