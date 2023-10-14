@@ -1,10 +1,19 @@
 .center {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
     height: 100vh; /* Optional: Center vertically in the viewport */
   
+}
+
+.leftSide {
+    border: 1px solid #443C5C;
+    background-image: url(<src/img/robot.png>), lightgray 50% / cover no-repeat;
+}
+
+.rightSide {
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 #colourHead {
@@ -58,6 +67,7 @@
     background-origin: border-box;
     background-clip: padding-box, border-box;
     margin-right: 30px; 
+    float: left;
 }
   
 #textInput1 {
