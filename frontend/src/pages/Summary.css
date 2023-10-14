@@ -17,9 +17,10 @@
 }
 
 .main {
+    display: flex;
+    flex-direction: column;
     padding: 0px 0px;
     display: flex;
-    flex-direction: row;
     height: 100vh; /* Optional: Center vertically in the viewport */
     background: linear-gradient(180deg, #000 0%, rgba(107, 53, 247, 0.20) 100%); /* make gradient and purple stronger */
     align-items: center;
