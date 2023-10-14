@@ -2,7 +2,7 @@ import cohere
 from flask import Flask, request, jsonify
 import requests
 
-co = cohere.Client('76JzRcCMdAJaylHBzzK3EuebwmQqg2SYsUyyuN2o') # This is your trial API key
+co = cohere.Client('76JzRcCMdAJaylHBzzK3EuebwmQqg2SYsUyyuN2o')
 co_response = co.summarize( 
   text='{text}',
   length='auto',
