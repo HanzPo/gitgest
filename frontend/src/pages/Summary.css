@@ -114,6 +114,10 @@
     transform: translate3d(0, 0, 100vmin) rotateX(calc(var(--rotation-y, 0) * 1deg)) rotateY(calc(var(--rotation-x, 0) * 1deg)) rotateX(0deg);
   }
   
+  .backgroundLoader {
+    background: linear-gradient(180deg, #000 0%, rgba(107, 53, 247, 0.20) 100%); /* make gradient and purple stronger */
+  }
+  
   .fakeBody {
       transform-origin: 50% 50%;
       animation: scale var(--timeline) var(--delay) infinite linear;

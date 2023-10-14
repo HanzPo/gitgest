@@ -28,7 +28,7 @@ const Summary = () => {
     return (
       <div>
         <div className="header">
-          <h1 id="companyName">company name here </h1>
+          <h1 id="companyName">GitGest</h1>
         </div>
         <div className="main">
           <h1 className="title">Summarization of Commits Since</h1>
@@ -42,6 +42,7 @@ const Summary = () => {
   }
 
   return (
+    <div class="backgroundLoader">
     <div class="fakeBody">
     <div class="scene">
     <div class="shadow"></div>
@@ -62,6 +63,7 @@ const Summary = () => {
       </div>
     </div>
 
+  </div>
   </div>
   </div>
   );

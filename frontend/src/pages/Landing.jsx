@@ -17,7 +17,7 @@ const Landing = () => {
   return (
     <div>
       <div className="header">
-        <h1 id="companyName">company name here </h1>
+        <h1 id="companyName">GitGest</h1>
       </div>
       <div className="center">
         <div id="leftSide">
