@@ -16,3 +16,9 @@ body {
     src: local("SpaceGroteskRegular"),
         url("./fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: "Inter";
+    src: local("InterRegular"),
+     url("./fonts/Inter-Regular.ttf") format("truetype");
+   }
