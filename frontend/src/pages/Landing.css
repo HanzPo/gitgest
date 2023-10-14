@@ -114,13 +114,14 @@
 #goButton {
     width: 20px;
     height: 20px;
-    padding: 22px; /* Adjust padding */
+    padding: 27px; /* Adjust padding */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%; /* Use 50% for a perfect circle */
     background: linear-gradient(180deg, #D1D3E2 0%, #75629D 100%);
     text-decoration: none; 
+    float: right;
   }
 
 #goButton::after {

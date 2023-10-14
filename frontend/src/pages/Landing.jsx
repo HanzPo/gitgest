@@ -28,7 +28,7 @@ const Landing = () => {
         <p id="paragraph">
         We use Co:here’s API to summarize all Github commits since your last
         one.
-      </p>
+        </p>
         <div className="inputContainer">
           <input
           className="textInput"
@@ -48,8 +48,7 @@ const Landing = () => {
             <button id="goButton"></button>
           </a>
         </div>
-      </div>
-      
+      </div>  
     </div>
     </div>
   );
