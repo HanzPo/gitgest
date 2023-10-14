@@ -1,0 +1,18 @@
+
+body {
+    background-color: #000;
+    color: #fff; /* This sets the text color to white for better visibility on a black background */
+}
+
+@font-face {
+    font-family: "SpaceGroteskBold";
+    src: local("SpaceGroteskBold"),
+     url("./fonts/SpaceGrotesk/SpaceGrotesk-Bold.ttf") format("truetype");
+    font-weight: bold;
+   }
+   
+@font-face {
+    font-family: "SpaceGroteskRegular";
+    src: local("SpaceGroteskRegular"),
+        url("./fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf") format("truetype");
+}

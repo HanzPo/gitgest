@@ -1,0 +1,97 @@
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Optional: Center vertically in the viewport */
+  
+}
+
+#colourHead {
+    font-family: 'SpaceGroteskBold';
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.6px;
+
+    background: linear-gradient(90deg, #FF3BFF 0%, #ECBFBF 38.02%, #5C24FF 75.83%, #D94FD5 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 10px; 
+  }
+
+#whiteHead {
+    font-family: 'SpaceGroteskRegular';
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.6px;    
+    margin-top: 0px;
+
+    margin-bottom: 10px; 
+}
+
+#paragraph {
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px; /* 165% */
+    letter-spacing: 0.72px;
+    margin-top: 0px; 
+
+}
+
+.textInput {
+    color: white;
+    font-family: "SpaceGroteskRegular";
+    padding: 1.1rem;
+    border: double 3px transparent;
+    border-radius: 100px;
+    background-image: linear-gradient(#443C5C, #443C5C), 
+    linear-gradient(90deg, #FF3BFF 0%, #ECBFBF 38.02%, #5C24FF 75.83%, #D94FD5 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    margin-right: 30px; 
+}
+  
+#textInput1 {
+    width: 300px;
+}
+
+#textInput2 {
+    width: 170px;
+}
+
+
+.textInput::placeholder {
+    color: #A3A3A3; 
+    font-family: "SpaceGroteskRegular";
+}
+
+.inputContainer {
+    margin: 10px;
+}
+
+#goButton {
+    width: 20px;
+    height: 20px;
+    padding: 22px; /* Adjust padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Use 50% for a perfect circle */
+    background: linear-gradient(180deg, #D1D3E2 0%, #75629D 100%);
+    text-decoration: none; 
+  }
+
+#goButton::after {
+    content: '\2192';
+    font-size: 20px; 
+    text-decoration: none; 
+}
