@@ -26,7 +26,7 @@ const Summary = () => {
 
   if (!isLoading) {
     return (
-      <div className="backgroundWaves">
+      <div>
         <div className="header">
           <h1 id="companyName">company name here </h1>
         </div>
@@ -41,7 +41,30 @@ const Summary = () => {
     );
   }
 
-  return <div>Loading...</div>;
+  return (
+    <div class="fakeBody">
+    <div class="scene">
+    <div class="shadow"></div>
+    <div class="jumper">
+      <div class="spinner">
+        <div class="scaler">
+          <div class="loader">
+            <div class="cuboid">
+              <div class="cuboid__side"></div>
+              <div class="cuboid__side"></div>
+              <div class="cuboid__side"></div>
+              <div class="cuboid__side"></div>
+              <div class="cuboid__side"></div>
+              <div class="cuboid__side"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  );
 };
 
 export default Summary;
