@@ -78,8 +78,12 @@ def receive_repo():
             
             prompt += message + "\n"
 
-          summary = co_response(prompt)
+          
 
+          if (prompt == ""):
+             return ({"since_last_commit": 0, "summary" : "You were the author of the last commit!"})
+          
+          summary = co_response(prompt)
           return ({"since_last_commit": latest_commits["ahead_by"] - 1, "summary" : summary[1]})
         else:
           return({'error': 'GitHub API request failed'}), response.status_code
