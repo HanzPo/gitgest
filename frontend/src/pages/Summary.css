@@ -85,3 +85,7 @@
     height: 500px;
     width: 100%;
  }
+ 
+.display-linebreak {
+    white-space: pre-line;
+  }
