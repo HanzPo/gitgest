@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./Landing.css";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const Landing = () => {
   const [repoLink, setRepoLink] = useState("");
@@ -71,7 +73,7 @@ const Landing = () => {
                   "token"
                 )}`}
               >
-                <button id="goButton"></button>
+                <button id="goButton"><FontAwesomeIcon icon={faArrowRight} /></button>
               </Link>
             </div>
           )}
