@@ -11,10 +11,11 @@ const Summary = () => {
   const [summary, setSummary] = useState("");
   const url = searchParams.get("url");
   const poi = searchParams.get("poi");
+  const token = searchParams.get("token")
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:5000/receive_repo?url=${url}&poi=${poi}`)
+      .get(`http://127.0.0.1:5000/receive_repo?url=${url}&poi=${poi}&token=${token}`)
       .then((response) => {
         setSinceLastCommit(response.data.since_last_commit);
         setSummary(response.data.summary);

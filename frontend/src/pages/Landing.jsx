@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import "./Landing.css";
 import { Link } from "react-router-dom";
 
 const Landing = () => {
   const [repoLink, setRepoLink] = useState("");
   const [username, setUsername] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleRepoLinkChange = (event) => {
     setRepoLink(event.target.value);
@@ -13,6 +15,8 @@ const Landing = () => {
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
+
+  console.log(searchParams);
 
   return (
     <div>
@@ -56,10 +60,21 @@ const Landing = () => {
               onChange={handleUsernameChange}
               placeholder="Enter your username here"
             />
-            <Link to={`/summary?url=${repoLink}&poi=${username}`}>
+            <Link
+              to={`/summary?url=${repoLink}&poi=${username}&token=${searchParams.get(
+                "token"
+              )}`}
+            >
               <button id="goButton"></button>
             </Link>
           </div>
+          {searchParams.size < 1 ? (
+            <a href="http://127.0.0.1:5000/login">
+              <button>Log in with github</button>
+            </a>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>
