@@ -1,9 +1,11 @@
 .header {
     width: 1400px;
-    height: 60px;
+    height: 100px;
     flex-shrink: 0;
-    padding-top: 1px4;
-    padding-left: 70px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 1px;
+    padding-left: 25px;
     background: rgba(255, 255, 255, 0.20);
 }
 

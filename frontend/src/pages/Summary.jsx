@@ -30,6 +30,12 @@ const Summary = () => {
     return (
       <div>
         <div className="header">
+          <img
+            src="src/img/gitgestLogo.png"
+            alt="Image of GitGest Logo"
+            width="150"
+            height="100"
+          />
           <h1 id="companyName">GitGest</h1>
         </div>
         <div className="center">
@@ -57,6 +63,12 @@ const Summary = () => {
     return (
       <div>
         <div className="header">
+          <img
+            src="src/img/gitgestLogo.png"
+            alt="Image of GitGest Logo"
+            width="150"
+            height="100"
+          />
           <h1 id="companyName">GitGest</h1>
         </div>
         <div className="main">
