@@ -1,12 +1,3 @@
-.header {
-    width: 1400px;
-    height: 60px;
-    flex-shrink: 0;
-    padding-top: 1px;
-    padding-left: 70px;
-    background: rgba(255, 255, 255, 0.20);
-}
-
 #companyName {
     font-family: "Inter";
     font-size: 20px;
@@ -20,7 +11,6 @@
     display: flex;
     flex-direction: column;
     padding: 0px 0px;
-    display: flex;
     height: 100vh; /* Optional: Center vertically in the viewport */
     background-image: url("src/img/summaryBackground.png");
     /* background: linear-gradient(180deg, #000 0%, rgba(107, 53, 247, 0.20) 100%); make gradient and purple stronger */
@@ -97,6 +87,78 @@
     line-height: 33px; /* 165% */
     letter-spacing: 0.72px;
     max-width: 1000px;
+}
+
+.center {
+    padding: 100px 0;
+    height: 100vh; /* Optional: Center vertically in the viewport */
+    background: linear-gradient(180deg, #000 0%, rgba(107, 53, 247, 0.20) 100%); /* make gradient and purple stronger */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.leftSide {
+    border: 0px solid #443C5C;
+    background-image: url(<src/img/robot.png>), lightgray 50% / cover no-repeat;
+
+}
+
+.rightSide {
+    align-items: center;
+    justify-content: center;
+}
+
+#errorTitle {
+    text-align: center;
+    font-family: 'SpaceGroteskBold';
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.6px;
+
+    background: linear-gradient(90deg, #FF3BFF 0%, #ECBFBF 38.02%, #5C24FF 75.83%, #D94FD5 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 10px; 
+}
+
+#errorParagraph {
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px; /* 165% */
+    letter-spacing: 0.72px;
+    margin-top: 0px; 
+
+}
+
+#homeButton {
+    width: 200px;
+    height: 50px;
+
+    color: white;
+    font-family: "SpaceGroteskRegular";
+    padding: 1.1rem;
+    border: double 3px transparent;
+    border-radius: 100px;
+    background-image: linear-gradient(#443C5C, #443C5C), 
+    linear-gradient(90deg, #FF3BFF 0%, #ECBFBF 38.02%, #5C24FF 75.83%, #D94FD5 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+#homeButton::after {
+    content: '\2192';
+    font-size: 20px; 
+    text-decoration: none; 
 }
 
 .display-linebreak {
@@ -289,3 +351,23 @@
     top: 0;
     left: 0;
   }
+
+  .navbar {
+    width: 99%;
+    height: 8%;
+    background: rgba(255, 255, 255, 0.20);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 1rem 2rem; /* Adjust padding as needed */
+    border-radius: 50px;
+    margin: 10px;
+  }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; /* Ensure it's above other content */
+}

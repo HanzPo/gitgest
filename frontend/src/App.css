@@ -22,3 +22,23 @@ body {
     src: local("InterRegular"),
      url("./fonts/Inter-Regular.ttf") format("truetype");
    }
+
+.navbar {
+    width: 99%;
+    height: 8%;
+    background: rgba(255, 255, 255, 0.20);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 1rem 2rem; /* Adjust padding as needed */
+    border-radius: 50px;
+    margin: 10px;
+  }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; /* Ensure it's above other content */
+}

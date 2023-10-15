@@ -1,6 +1,6 @@
 import "./Summary.css";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import axios from "axios";
 
 const Summary = () => {
@@ -23,15 +23,39 @@ const Summary = () => {
       })
       .catch((error) => {
         setIsLoading(false);
-        setErrorMessage(`Error: ${error.response.data.error}`);
+        setErrorMessage(`${error.response.data.error}`);
       });
   }, []);
 
   if (errorMessage) {
     return (
       <div>
-        <h1>Something went wrong</h1>
-        <p>{errorMessage}</p>
+        <header className="navbar">
+          <img
+            src="src/img/gitgestLogo.png"
+            alt="Image of GitGest Logo"
+            width="60"
+            height="60"
+          />
+          <h1 id="companyName">GitGest</h1>
+        </header>
+        <div className="center">
+          <div className="leftSide">
+            <img
+              src="src/img/angryRobot.png"
+              alt="Image of Angry Robot"
+              width="400"
+              height="500"
+            />
+          </div>
+          <div className="rightSide">
+            <h1 id="errorTitle">Error</h1>
+            <p id="errorParagraph">{errorMessage}</p>
+            <Link to={"/"}>
+              <button id="homeButton">Back</button>
+            </Link>
+          </div>             
+        </div>
       </div>
     );
   }
@@ -39,15 +63,24 @@ const Summary = () => {
   if (!isLoading) {
     return (
       <div>
-        <div className="header">
+        <header className="navbar">
+          <img
+            src="src/img/gitgestLogo.png"
+            alt="Image of GitGest Logo"
+            width="60"
+            height="60"
+          />
           <h1 id="companyName">GitGest</h1>
-        </div>
+        </header>
         <div className="main">
           <h1 className="title">Summarization of Commits Since</h1>
           <h1 className="title2">{sinceLastCommit} Commits Ago</h1>
           <div className="summary">
             <p className="display-linebreak">{summary}</p>
           </div>
+            <Link to={"/"}>
+              <button id="homeButton">Back</button>
+            </Link>
         </div>
       </div>
     );
