@@ -33,7 +33,7 @@ const Summary = () => {
         <p>{errorMessage}</p>
       </div>
     );
-  }  
+  }
 
   if (!isLoading) {
     return (
@@ -54,6 +54,9 @@ const Summary = () => {
 
   return (
     <div className="backgroundLoader">
+      <div>
+        <h1 className="loading">Loading...</h1>
+      </div>
       <div className="fakeBody">
         <div className="scene">
           <div className="shadow"></div>
