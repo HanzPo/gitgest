@@ -1,6 +1,6 @@
 import "./Summary.css";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import axios from "axios";
 
 const Summary = () => {
@@ -44,6 +44,9 @@ const Summary = () => {
           <div className="rightSide">
             <h1 id="errorTitle">Error</h1>
             <p id="errorParagraph">{errorMessage}</p>
+            <Link to={"/"}>
+              <button id="homeButton">Back</button>
+            </Link>
           </div>             
         </div>
       </div>
@@ -62,6 +65,9 @@ const Summary = () => {
           <div className="summary">
             <p className="display-linebreak">{summary}</p>
           </div>
+            <Link to={"/"}>
+              <button id="homeButton">Back</button>
+            </Link>
         </div>
       </div>
     );
