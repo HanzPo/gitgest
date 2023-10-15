@@ -51,36 +51,30 @@ const Landing = () => {
               <button className="oauthButton">Log in With Github</button>
             </a>
           ) : (
-            <></>
+            <div className="inputContainer">
+              <input
+                className="textInput"
+                id="textInput1"
+                value={repoLink}
+                onChange={handleRepoLinkChange}
+                placeholder="Enter your GitHub repository link here"
+              />
+              <input
+                className="textInput"
+                id="textInput2"
+                value={username}
+                onChange={handleUsernameChange}
+                placeholder="Enter your username here"
+              />
+              <Link
+                to={`/summary?url=${repoLink}&poi=${username}&token=${searchParams.get(
+                  "token"
+                )}`}
+              >
+                <button id="goButton"></button>
+              </Link>
+            </div>
           )}
-
-          <p id="paragraph"> OR </p>
-
-          <div className="inputContainer">
-            <input
-              className="textInput"
-              id="textInput1"
-              value={repoLink}
-              onChange={handleRepoLinkChange}
-              placeholder="Enter your GitHub repository link here"
-            />
-            <input
-              className="textInput"
-              id="textInput2"
-              value={username}
-              onChange={handleUsernameChange}
-              placeholder="Enter your username here"
-            />
-            <Link
-              to={`/summary?url=${repoLink}&poi=${username}&token=${searchParams.get(
-                "token"
-              )}`}
-            >
-              <button id="goButton"></button>
-            </Link>
-          </div>
-
-
         </div>
       </div>
     </div>
