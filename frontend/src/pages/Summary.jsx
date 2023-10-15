@@ -43,6 +43,9 @@ const Summary = () => {
 
   return (
     <div class="backgroundLoader">
+      <div>
+      <h1 className="loading">Loading...</h1>
+      </div>
     <div class="fakeBody">
     <div class="scene">
     <div class="shadow"></div>
