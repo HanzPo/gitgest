@@ -141,18 +141,18 @@
 }
 
 #homeButton {
-    width: 200px;
-    height: 50px;
-
-    color: white;
+    color: black;
     font-family: "SpaceGroteskRegular";
     padding: 1.1rem;
     border: double 3px transparent;
     border-radius: 100px;
-    background-image: linear-gradient(#443C5C, #443C5C), 
-    linear-gradient(90deg, #FF3BFF 0%, #ECBFBF 38.02%, #5C24FF 75.83%, #D94FD5 100%);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+    background: linear-gradient(180deg, #FFF 0%, #C5C5C5 100%);
+    display: block; /* Make the button a block-level element */
+    text-align: center; /* Center the text horizontally */
+    margin: 0 auto; /* Center the button within its container */
+    text-decoration: none; /* Remove underlines from anchor tag */
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 #homeButton::after {
