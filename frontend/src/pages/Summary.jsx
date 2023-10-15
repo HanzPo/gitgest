@@ -22,18 +22,9 @@ const Summary = () => {
       })
       .catch((error) => {
         setIsLoading(false);
-        setErrorMessage(`Error: ${error.response.data.error}`);
+        setErrorMessage(error.response.data.error);
       });
   }, []);
-
-  if (errorMessage) {
-    return (
-      <div>
-        <h1>Something went wrong</h1>
-        <p>{errorMessage}</p>
-      </div>
-    );
-  }
 
   if (!isLoading) {
     return (
@@ -42,11 +33,20 @@ const Summary = () => {
           <h1 id="companyName">GitGest</h1>
         </div>
         <div className="main">
-          <h1 className="title">Summarization of Commits Since</h1>
-          <h1 className="title2">{sinceLastCommit} Commits Ago</h1>
-          <div className="summary">
-            <p className="display-linebreak">{summary}</p>
-          </div>
+          {errorMessage ? (
+            <>
+              <h1 className="title">Error</h1>
+              <p className="display-linebreak">{errorMessage}</p>
+            </>
+          ) : (
+            <>
+              <h1 className="title">Summarization of Commits Since</h1>
+              <h1 className="title2">{sinceLastCommit} Commits Ago</h1>
+              <div className="summary">
+                <p className="display-linebreak">{summary}</p>
+              </div>
+            </>
+          )}
         </div>
       </div>
     );
