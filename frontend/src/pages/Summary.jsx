@@ -51,7 +51,7 @@ const Summary = () => {
           <div className="rightSide">
             <h1 id="errorTitle">Error</h1>
             <p id="errorParagraph">{errorMessage}</p>
-            <Link to={"/"}>
+            <Link to={`/?loggedIn=True&token=${token}`}>
               <button id="homeButton">Back</button>
             </Link>
           </div>             
@@ -78,7 +78,7 @@ const Summary = () => {
           <div className="summary">
             <p className="display-linebreak">{summary}</p>
           </div>
-            <Link to={"/"}>
+            <Link to={`/?loggedIn=True&token=${token}`}>
               <button id="homeButton">Back</button>
             </Link>
         </div>
