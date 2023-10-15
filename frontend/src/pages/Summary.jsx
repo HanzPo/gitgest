@@ -22,15 +22,30 @@ const Summary = () => {
       })
       .catch((error) => {
         setIsLoading(false);
-        setErrorMessage(`Error: ${error.response.data.error}`);
+        setErrorMessage(`${error.response.data.error}`);
       });
   }, []);
 
   if (errorMessage) {
     return (
       <div>
-        <h1>Something went wrong</h1>
-        <p>{errorMessage}</p>
+        <div className="header">
+          <h1 id="companyName">GitGest</h1>
+        </div>
+        <div className="center">
+          <div className="leftSide">
+            <img
+              src="src/img/angryRobot.png"
+              alt="Image of Angry Robot"
+              width="400"
+              height="500"
+            />
+          </div>
+          <div className="rightSide">
+            <h1 id="errorTitle">Error</h1>
+            <p id="errorParagraph">{errorMessage}</p>
+          </div>             
+        </div>
       </div>
     );
   }

@@ -99,6 +99,58 @@
     max-width: 1000px;
 }
 
+.center {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* Optional: Center vertically in the viewport */
+    background: linear-gradient(180deg, #000 0%, rgba(107, 53, 247, 0.20) 100%); /* make gradient and purple stronger */
+    align-items: center;
+    justify-content: center;
+
+}
+
+.leftSide {
+    border: 0px solid #443C5C;
+    background-image: url(<src/img/robot.png>), lightgray 50% / cover no-repeat;
+
+}
+
+.rightSide {
+    align-items: center;
+    justify-content: center;
+
+}
+
+#errorTitle {
+    text-align: center;
+    font-family: 'SpaceGroteskBold';
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.6px;
+
+    background: linear-gradient(90deg, #FF3BFF 0%, #ECBFBF 38.02%, #5C24FF 75.83%, #D94FD5 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 10px; 
+}
+
+#errorParagraph {
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px; /* 165% */
+    letter-spacing: 0.72px;
+    margin-top: 0px; 
+
+}
+
 .display-linebreak {
     white-space: pre-line;
   }

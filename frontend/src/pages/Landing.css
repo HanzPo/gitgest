@@ -25,7 +25,7 @@
 }
 
 .leftSide { 
-    border: 1px solid #443C5C;
+    border: 0px solid #443C5C;
     background-image: url(<src/img/robot.png>), lightgray 50% / cover no-repeat;
 }
 
@@ -121,7 +121,7 @@
     background: linear-gradient(180deg, #D1D3E2 0%, #75629D 100%);
     text-decoration: none; 
     float: right;
-  }
+}
 
 #goButton::after {
     content: '\2192';
