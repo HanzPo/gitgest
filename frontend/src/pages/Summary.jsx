@@ -7,6 +7,7 @@ const Summary = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [sinceLastCommit, setSinceLastCommit] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null);
   const [summary, setSummary] = useState("");
   const url = searchParams.get("url");
   const poi = searchParams.get("poi");
@@ -20,9 +21,19 @@ const Summary = () => {
         setIsLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        setIsLoading(false);
+        setErrorMessage(`Error: ${error.response.data.error}`);
       });
   }, []);
+
+  if (errorMessage) {
+    return (
+      <div>
+        <h1>Something went wrong</h1>
+        <p>{errorMessage}</p>
+      </div>
+    );
+  }  
 
   if (!isLoading) {
     return (
@@ -42,30 +53,29 @@ const Summary = () => {
   }
 
   return (
-    <div class="backgroundLoader">
-    <div class="fakeBody">
-    <div class="scene">
-    <div class="shadow"></div>
-    <div class="jumper">
-      <div class="spinner">
-        <div class="scaler">
-          <div class="loader">
-            <div class="cuboid">
-              <div class="cuboid__side"></div>
-              <div class="cuboid__side"></div>
-              <div class="cuboid__side"></div>
-              <div class="cuboid__side"></div>
-              <div class="cuboid__side"></div>
-              <div class="cuboid__side"></div>
+    <div className="backgroundLoader">
+      <div className="fakeBody">
+        <div className="scene">
+          <div className="shadow"></div>
+          <div className="jumper">
+            <div className="spinner">
+              <div className="scaler">
+                <div className="loader">
+                  <div className="cuboid">
+                    <div className="cuboid__side"></div>
+                    <div className="cuboid__side"></div>
+                    <div className="cuboid__side"></div>
+                    <div className="cuboid__side"></div>
+                    <div className="cuboid__side"></div>
+                    <div className="cuboid__side"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-  </div>
-  </div>
-  </div>
   );
 };
 

@@ -59,6 +59,10 @@ def receive_repo():
             except:
                continue
         
+        print(len(commit_list))
+
+        if commit_list[-1]["author"]["login"] != POI:
+           return({"error":"User has not contributed to this repository"}), 400
 
         base = commit_list[-1]['sha']
         head = commit_list[0]['sha']
