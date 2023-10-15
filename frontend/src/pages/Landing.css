@@ -27,7 +27,7 @@
 }
 
 .center {
-    padding: 100px 0;
+    padding: 50px 100px;
     display: flex;
     flex-direction: row;
     height: 100vh; /* Optional: Center vertically in the viewport */
