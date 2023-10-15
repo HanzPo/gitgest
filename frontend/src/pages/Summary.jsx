@@ -29,15 +29,15 @@ const Summary = () => {
   if (errorMessage) {
     return (
       <div>
-        <div className="header">
+        <header className="navbar">
           <img
             src="src/img/gitgestLogo.png"
             alt="Image of GitGest Logo"
-            width="150"
-            height="100"
+            width="60"
+            height="60"
           />
           <h1 id="companyName">GitGest</h1>
-        </div>
+        </header>
         <div className="center">
           <div className="leftSide">
             <img
@@ -62,15 +62,15 @@ const Summary = () => {
   if (!isLoading) {
     return (
       <div>
-        <div className="header">
+        <header className="navbar">
           <img
             src="src/img/gitgestLogo.png"
             alt="Image of GitGest Logo"
-            width="150"
-            height="100"
+            width="60"
+            height="60"
           />
           <h1 id="companyName">GitGest</h1>
-        </div>
+        </header>
         <div className="main">
           <h1 className="title">Summarization of Commits Since</h1>
           <h1 className="title2">{sinceLastCommit} Commits Ago</h1>

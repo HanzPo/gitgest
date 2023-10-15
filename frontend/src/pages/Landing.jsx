@@ -16,15 +16,15 @@ const Landing = () => {
 
   return (
     <div>
-      <div className="header">
+      <header className="navbar">
         <img
-            src="src/img/gitgestLogo.png"
-            alt="Image of GitGest Logo"
-            width="150"
-            height="100"
+          src="src/img/gitgestLogo.png"
+          alt="Image of GitGest Logo"
+          width="60"
+          height="60"
         />
-        <h1 id="companyName">GitGest</h1> 
-      </div>
+        <h1 id="companyName">GitGest</h1>
+      </header>
       <div className="center">
         <div id="leftSide">
           <img
