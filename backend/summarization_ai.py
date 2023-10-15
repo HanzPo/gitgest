@@ -111,7 +111,7 @@ def receive_repo():
             if prompt == "":
                 return {
                     "since_last_commit": 0,
-                    "summary": "You were the author of the last commit!",
+                    "summary": f"{POI} was the author of the last commit",
                 }
 
             if len(prompt) > 250:
