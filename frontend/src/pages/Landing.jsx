@@ -45,6 +45,17 @@ const Landing = () => {
             We use Co:here’s API to summarize all Github commits since your last
             one.
           </p>
+
+          {searchParams.size < 1 ? (
+            <a href="http://127.0.0.1:5000/login">
+              <button className="oauthButton">Log in With Github</button>
+            </a>
+          ) : (
+            <></>
+          )}
+
+          <p id="paragraph"> OR </p>
+
           <div className="inputContainer">
             <input
               className="textInput"
@@ -68,13 +79,8 @@ const Landing = () => {
               <button id="goButton"></button>
             </Link>
           </div>
-          {searchParams.size < 1 ? (
-            <a href="http://127.0.0.1:5000/login">
-              <button>Log in with github</button>
-            </a>
-          ) : (
-            <></>
-          )}
+
+
         </div>
       </div>
     </div>
