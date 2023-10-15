@@ -59,15 +59,14 @@ def receive_repo():
 
     try:
         api_url = f"https://api.github.com/repos/{owner}/{repo_name}/commits"
-        print(api_url)
-        headers = {
-            "Accept": "application/vnd.github.v3+json",
-            "Authorization": f"token {token}"
-        }
-        response = requests.get(
-            api_url,
-            headers=headers
-        )
+        if token:
+            headers = {
+                "Accept": "application/vnd.github.v3+json",
+                "Authorization": f"token {token}",
+            }
+        else:
+            headers = {"Accept": "application/vnd.github.v3+json"}
+        response = requests.get(api_url, headers=headers)
 
         if response.status_code == 200:
             commits = response.json()
@@ -95,9 +94,7 @@ def receive_repo():
         api_url = (
             f"https://api.github.com/repos/{owner}/{repo_name}/compare/{base}...{head}"
         )
-        response = requests.get(
-            api_url, headers=headers, data={"access_token": f"{token}"}
-        )
+        response = requests.get(api_url, headers=headers)
 
         if response.status_code == 200:
             latest_commits = response.json()
@@ -118,10 +115,10 @@ def receive_repo():
                 }
 
             if len(prompt) > 250:
-              summary = co_response(prompt)
+                summary = co_response(prompt)
             else:
-              summary = ["", prompt]
-            
+                summary = ["", prompt]
+
             return {
                 "since_last_commit": latest_commits["ahead_by"] - 1,
                 "summary": summary[1],
