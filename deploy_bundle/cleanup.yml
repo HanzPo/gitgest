@@ -1,0 +1,21 @@
+---
+- name:
+  hosts: webserver
+  become: true
+  pre_tasks:
+    - name: Load variables
+      ansible.builtin.include_vars:
+        file: vars.yml
+  tasks:
+    - name: Remove nginx
+      ansible.builtin.package:
+        name: nginx
+        state: absent
+        purge: true
+        autoremove: true
+    - name: Remove supervisor
+      ansible.builtin.package:
+        name: supervisor
+        state: absent
+        purge: true
+        autoremove: true

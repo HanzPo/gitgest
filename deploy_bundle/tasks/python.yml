@@ -1,0 +1,60 @@
+# tasks to deploy Python stack
+- name: Get Python Version
+  ansible.builtin.command:
+    cmd: which python3
+  changed_when: false
+  register: python_version
+- name: Copy project files to host
+  ansible.builtin.copy:
+    dest: /home/admin/app/
+    src: ../../
+    mode: "555"
+    owner: admin
+- name: Install venv requirements
+  ansible.builtin.package:
+    name:
+      - python3-venv
+      - python3-pip
+      - python3-setuptools
+    state: present
+- name: Create venv and install requirements
+  ansible.builtin.pip:
+    requirements: /home/admin/app/requirements.txt # TODO: verify this requirements
+    virtualenv: /home/admin/app/env
+    virtualenv_command: "{{ python_version.stdout }} -m venv"
+- name: Get pip list
+  ansible.builtin.shell:
+    cmd: . /home/admin/app/env/bin/activate && pip list
+  changed_when: false
+  register: pip
+- name: Check pip list
+  ansible.builtin.debug:
+    msg: "{{ pip }}"
+- name: Install gunicorn
+  ansible.builtin.pip:
+    name: gunicorn
+    virtualenv: /home/admin/app/env
+- name: Install supervisor
+  ansible.builtin.package:
+    name: supervisor
+    state: present
+- name: Copy supervisor config
+  ansible.builtin.copy:
+    dest: /etc/supervisor/conf.d/flaskapp.conf
+    src: ../flaskapp.conf
+    mode: "644"
+    owner: admin
+  notify: Reload supervisor
+- name: Create supervisor log dir
+  ansible.builtin.file:
+    path: /var/log/flaskapp
+    state: directory
+    mode: "644"
+- name: Create supervisor log files
+  ansible.builtin.file:
+    path: "/var/log/flaskapp/flaskapp.{{ item }}.log"
+    state: touch
+    mode: "644"
+  loop:
+    - out
+    - err

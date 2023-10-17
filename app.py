@@ -15,7 +15,7 @@ co = cohere.Client(COHERE_API_KEY)
 def co_response(commit_history):
     return co.summarize(
         text=commit_history,
-        length="auto",
+        length="medium",
         format="bullets",
         model="command",
         additional_command="",
@@ -138,4 +138,4 @@ def receive_repo():
 CORS(app)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

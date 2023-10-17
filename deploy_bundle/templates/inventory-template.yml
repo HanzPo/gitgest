@@ -1,0 +1,6 @@
+---
+{{project_name}}:
+  hosts:
+    webserver:
+      ansible_user: {{webserver_user}}
+      ansible_host: {{webserver_ip}}

@@ -1,0 +1,5 @@
+---
+project_name: {{ project_name }}
+webserver_user: {{ webserver_user }}
+webserver_ip: {{ webserver_ip }}
+project_language: {{ project_language }}
